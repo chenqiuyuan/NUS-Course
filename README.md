@@ -1,2 +1,2 @@
 # algorithm
-something about algorithm
+something about algorithm in NUS
