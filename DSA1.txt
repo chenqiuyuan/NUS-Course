@@ -1,0 +1,190 @@
+
+Programming Assignment 1 
+DAA - Design and Analysis of Algorithms 
+DSA - Data Structures of Algorithms 
+School of Computing, National University of Singapore 
+July - 2015
+Recruiting Interns
+
+Note: Deadline is 14:00 SGT Tuesday 21/7
+Problem Description
+
+Supervin is a CEO of a big IT company. This company has M branches around the world, numbered from 1 to M. This summer holiday, there are N interns, numbered from 1 to N, looking for internship. As the number of interns and the number of branches may be different, Supervin decides that the i-th branch will employ exactly Hi intern.
+
+The problem is, every intern has their own preference list. That is, each intern ranks the branches from the most preferred to least preferred. The same thing also happens to every branch. Each brach also ranks the interns from the most preferred to least preferred.
+
+Now, Supervin wants the assignment to be stable.
+
+A pair of intern X and branch Y are unstable if :
+
+X prefers Y to its assigned branch
+Y prefers X to its assigned intern
+
+A stable assignment is an assignment with no unstable pairs.
+Supervin just came back from the first lecture of prof Leong, and he figures out how to find a stable matching. He asks you to write a program on C++ or Java to solve this problem. Because Supervin is a nice guy, he already gives you a skeleton files for this.
+
+General Input Format
+
+You will read input from standard input. 
+The input contains T testcases, each test case will give you the information about the numbers N,M,Hi, as well as the preference lists of branches and interns. 
+Details of input format are specified for each task below. 
+You can assume the input to be correct. You do not need to check for validity of the input.
+Note that, for each problem, you have different constraints on the input. Please read the constraints carefully.
+
+General Output Format
+
+You have to print the result into standard output. 
+The output should contain results for T testcases. For each testcase you have to print out the assignments of interns to branches, each assignment is a pair of intern y and branch x. 
+You have to follow the output format specifying below for each task. 
+Code Skeletons
+
+We provide the skeleton for C++ and Java below. You MUST USE this skeleton code, and the method findStableMarriage() MUST NOT be modified. 
+
+C++ skeleton 
+Java skeleton 
+
+Note 
+Java version used is "javac 1.6.0_24". 
+C++ version used is "g++ 4.4.7". 
+
+Task A (40 marks)
+
+In this task, the number of interns and the number of branches are exactly the same, that is, M = N . In addition, each branch hires exactly one intern, that is Hi = 1 for all i.
+
+Constraints
+
+For task A, you have to solve the problem with small dataset: 
+1 <= N <= 100
+You do not need to use any additional data structure. A straight-forward implementation of the algorithm given in Lecture 1 that runs in O(N^3) time is sufficient. (Of course, if you prefer, you can choose to do it with more efficient algorithm. It is up to you.)
+
+Time Limit : 1s
+
+Number of testcases: 1 <= T <= 20
+
+Input format for task A
+
+The first line will consist of an integer T, the number of testcases. 
+T cases follow. For each case : 
+There will be a single integer N, indicating the number of branches and the number of interns.
+The next N lines will be the preference list of N branches. The first line indicates the preference list of branch #1, the second line indicates the preference list of branch #2, etc. The preference list is ordered by rank. In other words, the first number represents the most preferred intern, the second number represents the second most preferred intern, etc.
+
+The next N lines will be the preference list of N interns. The first line indicates the preference list of intern #1, the second line indicates the preference list of intern #2, etc. The preference list is ordered by rank. In other words, the first number represents the most preferred branch, the second number represents the second most preferred branch, etc.
+
+Both of the preference list are guaranteed to be a permutation of {1,2,3,...,N}
+Output format for task A
+
+For each case, you have to output N lines. 
+Each of those N lines consist of two numbers "x y" separated by a single space indicates intern #y must be assigned with branch #x. Neither an intern nor a branch can be assigned more than once. In other words, you have to assign every interns and every branches. 
+If there are many stable matching, you may output any of them. We have a special checker to check whether your matching is stable or not. Your matching does not have to follow our matching.
+Input Sample
+
+2
+2
+1 2
+2 1
+2 1
+2 1
+5
+2 1 4 5 3
+4 2 1 3 5
+2 5 3 4 1
+1 4 3 2 5
+2 4 1 5 3
+5 1 2 4 3
+3 2 4 1 5
+2 3 4 5 1
+1 5 4 3 2
+4 2 5 3 1
+Output Sample
+
+1 1
+2 2
+1 1
+2 3
+3 2
+4 5
+5 4
+Explanation The second sample is exactly the same as the example in the last slides of "Lecture-01.pdf", where branches = {Victor, Wyatt, Xavier, Yancey, Zeus} and interns = {Amy, Bertha, Clare, Diane, Erika} 
+
+Task B (60 marks)
+
+As the same with task A, the number of interns and the number of branches are exactly the same, that is, M = N . In addition, each branch hires exactly one intern, that is Hi = 1 for all i.
+
+
+Constraints 
+For Task B, we are dealing with much larger dataset and so we need to implement that O(N^2) algorithm outlined in Lecture 1. Some data structures will be needed to make sure that every step inside the loop can be done in O(1) time. They are described in the lecture notes. 
+
+1 <= N <= 500
+Time Limit : 1s
+
+Number of testcases: 1 <= T <= 20
+
+
+Input, Output 
+Input and output formats for task B is the same as task A. 
+
+Task C (0 marks)
+
+This is an extra task for fun, you don't have to solve! 
+In this task, you have to solve the general cases, when M <= N and Hi may differ from 1. However, all interns will be hired, that is: H1 + H2 + ... Hm = N; 
+Constraints 
+Time Limit : 2s 
+Number of testcases: 1 <= T <= 20 
+
+Input size: 
+1 <=M <= N <= 500 
+Input Format for task C
+
+The first line will consist of an integer T, the number of testcases. 
+T cases follow. For each case : 
+The first line will consist of two integers M and N separated by a single space, indicating the number of branches and the number of interns respectively. 
+The next line consists of M integers. The i-th integer indicates Hi 
+The next M lines will be the preference list of M branches. The first line indicates the preference list of branch #1, the second line indicates the preference list of branch #2, etc. The preference list is ordered by rank. In other words, the first number represents the most preferred intern, the second number represents the second most preferred intern, etc. 
+The next N lines will be the preference list of N interns. The first line indicates the preference list of intern #1, the second line indicates the preference list of intern #2, etc. The preference list is ordered by rank. In other words, the first number represents the most preferred branch, the second number represents the second most preferred branch, etc. 
+The branches' preference list are guaranteed to be a permutation of {1,2,3,...,N}, while the interns' preference list are guaranteed to be a permutation of {1,2,3,...,M}
+Output Format for taks C
+
+For each case: 
+You have to output N lines. 
+Each of those N lines consist of two numbers "x y" separated by a single space indicates intern #y must be assigned with branch #x. Every intern could not be assigned more than once. Branch #x must be assigned exactly Hx times. 
+If there are many stable matching, you may output any of them. We have a special checker to check whether your matching is stable or not. Your matching does not have to follow our matching. 
+Input Sample
+
+3
+2 2
+1 1
+1 2
+2 1
+2 1
+2 1
+5 5
+1 1 1 1 1
+2 1 4 5 3
+4 2 1 3 5
+2 5 3 4 1
+1 4 3 2 5
+2 4 1 5 3
+5 1 2 4 3
+3 2 4 1 5
+2 3 4 5 1
+1 5 4 3 2
+4 2 5 3 1
+2 2
+2 0
+1 2
+1 2
+1 2
+1 2
+Output Sample
+
+1 1
+2 2
+1 1
+2 3
+3 2
+4 5
+5 4
+1 1
+1 2
+Explanation The first two samples are exactly the same with the example in the first part of PA1 as all the branches are looking for 1 intern. At the third sample, the first branch looks for 2 interns. 
+(End of problem's description)

@@ -1,0 +1,130 @@
+
+Programming Assignment 2 
+Summer Course: DSA - Data Structures and Algorithms 
+School of Computing, NUS 
+July - 2015
+Binary Tree Traversal
+
+Problem's description
+
+Masha loves drawing trees. Today she learns about the binary tree data structure, and she is excited about it. She knows that a binary tree is a recursive structure that has a root and 2 children as left sub-tree and right sub-tree. Traversing the tree displays the content of each node in the tree, in some specific order.
+
+Masha wants to traverse the binary tree in different orders. She learns 4 types of tree traversal order, as following.
+
+Pre-order traversal:
++ Display data of the root node (or current node)
++ Traverse the left subtree by recursively calling the pre-order traversal
++ Traverse the right subtree by recursively calling the pre-order traversal
+
+In-order traversal:
++ Traverse the left subtree by recursively calling the in-order traversal
++ Display data of the root node (or current node)
++ Traverse the right subtree by recursively calling the in-order traversal
+
+Post-order traversal:
++ Traverse the left subtree by recursively calling the post-order traversal
++ Traverse the right subtree by recursively calling the post-order traversal
++ Display data of the root node (or current node)
+
+Level-order traversal:
+Display the data of nodes level-by-level, from left to right, that is, display every node in a level from left to right first, before going to lower level. The root is at highest level, level #0.
+
+See pictures from Wikipedia for example.
+
+
+Pre-order pic	
+In-order pic	
+Post-order pic	
+Level-order pic
+Pre-order: F, B, A, D, C, E, G, I, H	In-order: A, B, C, D, E, F, G, H, I	Post-order: A, C, E, D, B, H, I, G, F	Level-order: F, B, G, A, D, I, C, E, H
+
+Problems
+
+Given trees of N nodes, numbered from 1 to N, write programs to help Masha traverse the trees.
+
+All the following tasks have the same constraints.
+
+Contraints:
+2 <= N <= 10000
+Time limit: 1 second
+Memory limit: 256 MB
+
+Task D (60 marks)
+
+You are given a binary tree by a list of its nodes. Traverse the tree with pre-order, in-order, and post-order.
+
+Input
+
+First line is N, number of nodes in the binary tree. 
+Each of next N lines describes a node of the tree, one node per line, with format: x u v, separated by a space, which means node x has left child u and right child v in the tree. 
+If the left or right child of a node is null, it is specified by -1. For example: x -1 v means left child of x is null, right child of x is v. 
+Output
+
+Your output must have 3 lines. The first line contains the list of N nodes of the tree by pre-order traversal; the second line -- by the in-order traversal, and the third line -- by the post-order traversal. In each line, nodes a separated by a space, except the last node. 
+Please make sure you don't print any space at the end of the line. 
+Sample input
+9
+6 2 7
+1 -1 -1
+2 1 4
+4 3 5
+7 -1 9
+9 8 -1
+3 -1 -1
+5 -1 -1
+8 -1 -1
+
+Sample output
+6 2 1 4 3 5 7 9 8
+1 2 3 4 5 6 7 8 9
+1 3 5 4 2 8 9 7 6
+
+Task E (40 marks)
+
+You are given a binary tree by a list of its nodes. Traverse the tree with level-order 
+Input
+
+First line is N, number of nodes in the binary tree. 
+Each of next N lines describes a node of the tree, one node per line, with format: x u v, separated by a space, which means node x has left child u and right child v in the tree. 
+If the left or right child of a node is null, it is specified by -1. For example: x -1 v means left child of x is null, right child of x is v. 
+Output
+
+Your output must have 1 line, which contains the list of N nodes of the tree by level-order traversal. Nodes are separated by a space. 
+Please make sure you don't print any space at the end of the line. 
+
+Sample input
+9
+6 2 7
+1 -1 -1
+2 1 4
+4 3 5
+7 -1 9
+9 8 -1
+3 -1 -1
+5 -1 -1
+8 -1 -1
+Sample output
+6 2 7 1 4 9 3 5 8
+
+Task F (0 marks)
+
+This is an extra task for fun, you don't have to solve! 
+You are given a binary tree by its pre-order and in-order, traverse it with post-order 
+Input
+
+The first line contains N, the number of nodes in the binary tree. 
+The next line contains N numbers, separated by space, which are the N nodes of the tree traversed by pre-order. 
+The last line contains N numbers, separated by space, which are the N nodes of the tree traversed by in-order. 
+Output
+
+Your output must have 1 line, which contains the list of N nodes of the tree by post-order traversal. Nodes are separated by a space. 
+Please make sure you don't print any space at the end of the line. 
+
+Sample input
+9
+6 2 1 4 3 5 7 9 8
+1 2 3 4 5 6 7 8 9
+Sample output
+1 3 5 4 2 8 9 7 6
+
+(End of problem's description)
